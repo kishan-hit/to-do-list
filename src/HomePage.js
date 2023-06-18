@@ -7,10 +7,12 @@ function HomePage() {
     const [msgList, setMsgList] = useState([]);
 
     function handleSubmit() {
+        if(msg){
         setMsgList([...msgList,{msg: msg, isDeleted: false}])
         let data = JSON.stringify([...msgList, {msg: msg, isDeleted: false}])
         localStorage.setItem("message",data)
         setMsg("")
+        }
     }
     function checkKey(e){
         if(e.key === 'Enter')
