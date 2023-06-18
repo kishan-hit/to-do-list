@@ -27,7 +27,7 @@ function HomePage() {
         <div className='bg-red-400 h-screen w-screen flex items-center justify-center '>
             <div className='h-[70%] w-[60%] shadow-2xl'>
                 <div className='h-[10%] flex items-center justify-center space-x-3 bg-red-700 rounded-t-lg'>
-                    <input type='text' value={msg} placeholder='Enter your text' onChange={(e)=>setMsg(e.target.value)} className='w-[60%] rounded-xl px-2' onKeyPress={checkKey} />
+                    <input type='text' value={msg} placeholder='Enter your text' onChange={(e)=>setMsg(e.target.value)} className='h-[5vh] w-[40%] rounded-xl px-2 outline-none' onKeyPress={checkKey} />
                     <div className='flex items-center justify-center w-fit h-full'>
                         <div className='bg-green-700 p-1 rounded-2xl cursor-pointer' onClick={handleSubmit}>
                             <Plus height="20px" fill="white" />
@@ -36,7 +36,7 @@ function HomePage() {
                 </div>
                 <div className='h-[90%] px-4 py-2 bg-white rounded-b-lg space-y-2 overflow-scroll scrollbar-hide'>
                    { msgList.map((inp,ind)=>{
-                        return <Message key={ind} message={inp.msg} setMsgList={setMsgList} />
+                        return <Message key={ind} message={inp} setMsgList={setMsgList} />
                     }) }
                 </div>
             </div>
